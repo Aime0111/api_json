@@ -72,3 +72,13 @@ def actualizar_alumno(no_control):
     alumno.semestre = data['semestre']
     db.session.commit()
     return jsonify({'mensaje': 'Alumno actualizado exitosamente'})
+
+# Endpoint para eliminar un estudiante
+@app.route('/alumnos/<no_control>', methods=['DELETE'])
+def eliminar_alumno(no_control):
+    alumno = Alumno.query.get(no_control)
+    if alumno is None:
+        return jsonify({'mensaje': 'Alumno no encontrado'}), 404
+    db.session.delete(alumno)
+    db.session.commit()
+    return jsonify({'mensaje': 'Alumno eliminado exitosamente'})
