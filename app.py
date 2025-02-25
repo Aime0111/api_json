@@ -2,7 +2,7 @@ from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost:3306/crud'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://aime:9W2DZs88pphEta223gzU1B3smBTOH6IJ@dpg-cuptrh1u0jms73brqv4g-a.oregon-postgres.render.com/crud_8g7x'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
